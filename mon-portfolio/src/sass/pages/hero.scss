@@ -1,0 +1,68 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: $text;
+  @include tablet {
+    min-height: 75vh;
+    height: 70vh;
+  }
+  & span {
+    margin: 0px 0px 20px 4px;
+    color: $green;
+    font-size: 1.5rem;
+    @include phone {
+      font-size: 1.2rem;
+      margin: 0px 0px 10px 4px;
+    }
+  }
+  & h1 {
+    font-size: clamp(40px, 8vh, 80px);
+    color: white;
+    @include tablet {
+      font-size: 70px;
+    }
+    @include phone {
+      font-size: 40px;
+    }
+  }
+  & h2 {
+    font-size: clamp(30px, 8vh, 60px);
+    color: $grey;
+    @include tablet {
+      font-size: 40px;
+    }
+    @include phone {
+      font-size: 20px;
+    }
+  }
+  &__button {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $green;
+    color: $green;
+    width: 200px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 30px;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $text;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: darken(#0ca678, 1%);
+      z-index: -1;
+      transition: width 0.3s ease;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}

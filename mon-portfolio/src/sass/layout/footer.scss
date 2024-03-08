@@ -1,0 +1,8 @@
+.footer {
+  color: $text;
+  padding: 1rem;
+  text-align: center;
+  @include phone {
+    font-size: 1rem;
+  }
+}

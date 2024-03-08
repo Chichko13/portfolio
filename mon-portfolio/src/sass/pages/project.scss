@@ -1,0 +1,115 @@
+.projects {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    @include phone {
+      gap: 4rem;
+    }
+  }
+  &__content {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    & p {
+      font-size: 1rem;
+      margin: 1rem;
+      height: 190px;
+      @include tablet {
+        height: 100px;
+        width: 500px;
+      }
+      @include phone {
+        width: 300px;
+      }
+    }
+    & h3 {
+      position: relative;
+      color: $green;
+      width: clamp(
+        100px,
+        80%,
+        300px
+      ); // Minimal, largeur préférée, largeur maximal
+      background-color: $dark-blue;
+      padding: 1rem;
+      margin: auto;
+      border-radius: 5px;
+      text-align: center;
+    }
+    & svg {
+      width: 50px;
+      color: $text;
+      @include tablet {
+        width: 35px;
+      }
+      &:hover {
+        color: $green;
+      }
+    }
+    &--svg {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    @include tablet {
+      flex-direction: column;
+      gap: 15px;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      @include tablet {
+        flex-direction: column;
+      }
+      .projects__content--svg {
+        justify-content: start;
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    @include tablet {
+      margin: auto;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $background-color;
+      transition: background-color 0.3s ease;
+      opacity: 0.5;
+    }
+    &:hover::after {
+      background-color: transparent; // retire mon filtre
+    }
+    & img {
+      width: 600px;
+      height: 355px;
+      transition: transform 0.3s ease;
+      border-radius: 10px;
+      object-fit: cover;
+      @include desktop {
+        width: 500px;
+        height: 300px;
+      }
+      @include phone {
+        width: 335px;
+        height: 200px;
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

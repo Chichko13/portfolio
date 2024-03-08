@@ -1,0 +1,56 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  gap: 1.5rem;
+  text-align: center;
+  @include tablet {
+    max-width: 450px;
+  }
+  @include phone {
+    max-width: 330px;
+    gap: 3rem;
+  }
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    @include phone {
+      font-size: 2rem;
+    }
+  }
+  &__text {
+    @include phone {
+      font-size: 1rem;
+    }
+  }
+  &__button {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $green;
+    color: $green;
+    width: 200px;
+    text-align: center;
+    border-radius: 4px;
+    align-self: center;
+    transition: color 0.3s ease;
+    padding: 10px 20px;
+    &:hover {
+      color: $text;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: darken(#0ca678, 1%);
+      z-index: -1;
+      transition: width 0.3s ease;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}

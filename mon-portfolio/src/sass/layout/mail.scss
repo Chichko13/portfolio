@@ -1,0 +1,22 @@
+.mail {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  right: 40px;
+  @include phone {
+    display: none;
+  }
+  & a {
+    padding: 10px;
+    margin: 20px auto;
+    writing-mode: vertical-rl;
+    color: $text;
+    letter-spacing: 3px;
+    @include tablet {
+      letter-spacing: 1px;
+    }
+    &:hover {
+      color: $green;
+    }
+  }
+}

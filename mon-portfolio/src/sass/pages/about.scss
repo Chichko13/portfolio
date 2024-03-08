@@ -1,0 +1,39 @@
+.about {
+  @include tablet {
+    min-height: 70vh;
+    height: 70vh;
+  }
+  &__title {
+    font-size: 2rem;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+    @include tablet {
+      grid-template-columns: none;
+    }
+    & p {
+      @include phone {
+        font-size: 1rem;
+      }
+    }
+  }
+  &__image {
+    @include tablet {
+      margin: auto;
+    }
+  }
+  &__text {
+    padding-bottom: 20px;
+  }
+  &__image img {
+    width: 500px;
+    height: 300px;
+    opacity: 0.4;
+    @include phone {
+      width: 300px;
+      height: 200px;
+    }
+  }
+}
