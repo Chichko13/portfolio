@@ -39,10 +39,7 @@ function Skills() {
             <h3>Mes languages</h3>
             <ul>
               {data.map((tech) => (
-                <li key={tech.id}>
-                  {tech.logo && <img src={tech.logo} alt={tech.name} />}
-                  {tech.name}
-                </li>
+                <li key={tech.id}>{tech.name}</li>
               ))}
             </ul>
           </div>
