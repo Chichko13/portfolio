@@ -3,10 +3,7 @@ function ExternalLink({ className }) {
     <div className={`link ${className}`}>
       <ul>
         <li>
-          <a
-            href="https://github.com/Chichko13?tab=repositories"
-            target="_blank"
-          >
+          <a href="https://github.com/Chichko13" target="_blank">
             <title>GitHub</title>
             <svg
               xmlns="http://www.w3.org/2000/svg"
