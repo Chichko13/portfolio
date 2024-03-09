@@ -3,17 +3,20 @@
   position: fixed;
   bottom: 0px;
   right: 40px;
+  @include tablet {
+    right: 20px;
+  }
   @include phone {
     display: none;
   }
   & a {
     padding: 10px;
-    margin: 20px auto;
     writing-mode: vertical-rl;
     color: $text;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     @include tablet {
       letter-spacing: 1px;
+      margin: 0;
     }
     &:hover {
       color: $green;
